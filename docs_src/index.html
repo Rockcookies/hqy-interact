@@ -12,7 +12,7 @@ layout: index
 
 	<p class="more">
 		<a href="/docs/started-welcome.html">Read the Documentation</a><!--
-		--> &nbsp;&nbsp; <a href="/demos.html">Try the Demo</a><!--
+		--> &nbsp;&nbsp; <a href="/demos/index.html">Try the Demo</a><!--
 		--> &nbsp;&nbsp; <a href="#">Buy me a beer</a>
 	</p>
 </div>
@@ -68,8 +68,8 @@ var $ph, axisY;
 
 $('.home-dnd-item').hqyDraggable({
 	proxy: 'clone',
-	onStartDrag: function (event, dragElement) {
-		$(dragElement).width($(event.data.target).width());
+	onStartDrag: function (event, target) {
+		$(target).width($(this).width());
 
 		$ph = $(this).clone();
 		$ph.addClass('op2');
@@ -87,7 +87,7 @@ $('.home-dnd-item').hqyDroppable({
 	onDragEnter: function () {
 		axisY = 0;
 	},
-	onDragOver: function (event, dragElement) {
+	onDragOver: function (event, target) {
 		if (event.data.top > axisY) {
 			$(this).after($ph);
 		} else {
@@ -99,8 +99,12 @@ $('.home-dnd-item').hqyDroppable({
 });
 
 $('.home-dnd .list').hqyDroppable({
-	onDragEnter: function (event, dragElement) {
-		if ($(this).find('.home-dnd-item').length <= 0) {
+	onDragEnter: function (event, target) {
+		var $filter = $(this).find('.home-dnd-item:visible').filter(function () {
+			return this !== target;
+		});
+
+		if ($filter.length <= 0) {
 			$(this).append($ph);
 		}
 	}

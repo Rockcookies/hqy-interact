@@ -7,15 +7,15 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">HqyInteract</a>
+			<a class="navbar-brand" href="{% if page.layout != "index" %}../{% endif %}index.html">HqyInteract</a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li {% if page.layout == "index" %}class="active"{% endif %}><a href="/index.html">Home</a></li>
-				<li {% if page.layout == "demos" %}class="active"{% endif %}><a href="/demos.html">Demos</a></li>
-				<li {% if page.layout == "docs" %}class="active"{% endif %}><a href="/docs/started-welcome.html">Docs</a></li>
-				<li><a href="#">Download</a></li>
+				<li {% if page.layout == "index" %}class="active"{% endif %}><a href="{% if page.layout != "index" %}../{% endif %}index.html">Home</a></li>
+				<li {% if page.layout == "demos" %}class="active"{% endif %}><a href="{% if page.layout != "index" %}../{% endif %}demos/index.html">Demos</a></li>
+				<li {% if page.layout == "docs" %}class="active"{% endif %}><a href="{% if page.layout != "index" %}../{% endif %}docs/started-welcome.html">Docs</a></li>
+				<li><a href="http://rockcookies.github.io/hqy-interact/assets/download/hqyinteract-{{ site.version }}.zip">Download</a></li>
 			</ul>
 		</div>
 	</div>

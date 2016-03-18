@@ -29,5 +29,5 @@ Yep, include jQuery and `hqy.interact.min.js` into the footer.
 {% endhighlight %}
 
 
-> See [demos](/demos.html) for customisation and options usage.
+> See [demos](../demos/index.html) for customisation and options usage.
 
