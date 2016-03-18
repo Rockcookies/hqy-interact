@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draggable | HqyInteract - Touch enabled jQuery plugin that lets you create powerful interactions.</title>
+<meta name="description" content="Touch enabled jQuery plugin that lets you create powerful interactions.
+">
+<link rel="stylesheet" href="../assets/css/doc.min.css">
+
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/1.12.1/jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../assets/js/hqy.interact.min.js"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default app-nav">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">HqyInteract</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">
+				<li ><a href="/index.html">Home</a></li>
+				<li ><a href="/demos.html">Demos</a></li>
+				<li class="active"><a href="/docs/started-welcome.html">Docs</a></li>
+				<li><a href="#">Download</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<div class="app-title">
+	<div class="container">
+		<div class="row">
+			<h1>API</h1>
+		</div>
+	</div>
+</div>
+
+<div class="container app-docs">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="sidenav">
+				<li class="side-nav-head">Getting Started</li>
+				<li ><a href="started-welcome.html">Welcome</a></li>
+				<li ><a href="started-installation.html">Installation</a></li>
+			</ul>
+
+			<ul class="sidenav">
+				<li class="side-nav-head">API</li>
+				<li class="active"><a href="api-draggable.html">Draggable</a></li>
+				<li ><a href="api-droppable.html">Droppable</a></li>
+				<li ><a href="api-resizable.html">Resizable</a></li>
+			</ul>
+
+			<ul class="sidenav">
+				<li class="side-nav-head">Support</li>
+				<li ><a href="support-contributing.html">Contributing</a></li>
+				<!--<li><a href="support-changelog.html">Changelog</a></li> -->
+				<li ><a href="support-contact.html">Contact</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9 docs">
+			<h2>Draggable</h2>
+			<hr />
+
+<h3 id="properties">Properties</h3>
+
+<h4 id="proxy">proxy</h4>
+
+<p>Type: <code class="highlighter-rouge">string,function</code><br />
+Default: <code class="highlighter-rouge">null</code></p>
+
+<p>A proxy element to be used when dragging, when set to ‘clone’, a clone element is used as proxy. If a function is specified, it must return a jQuery object.</p>
+
+<p>The example below shows how to create a simple proxy object.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'.dragitem'</span><span class="p">).</span><span class="nx">hqyDraggable</span><span class="p">({</span>
+  <span class="na">proxy</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">source</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'&lt;div style="border:1px solid #ccc;width:80px"&gt;&lt;/div&gt;'</span><span class="p">);</span>
+    <span class="nx">p</span><span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="nx">source</span><span class="p">).</span><span class="nx">html</span><span class="p">()).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">'body'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">p</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span></code></pre></figure>
+
+<hr />
+
+<h4 id="revert">revert</h4>
+
+<p>Type: <code class="highlighter-rouge">boolean</code><br />
+Default: <code class="highlighter-rouge">false</code></p>
+
+<p>If set to true, the element will return to its start position when dragging stops.</p>
+
+<hr />
+
+<h4 id="cursor">cursor</h4>
+
+<p>Type: <code class="highlighter-rouge">string</code><br />
+Default: <code class="highlighter-rouge">move</code></p>
+
+<p>The css cursor when dragging.</p>
+
+<hr />
+
+<h4 id="deltax">deltaX</h4>
+
+<p>Type: <code class="highlighter-rouge">number</code><br />
+Default: <code class="highlighter-rouge">null</code></p>
+
+<p>The dragged element position x corresponding to current cursor.</p>
+
+<hr />
+
+<h4 id="deltay">deltaY</h4>
+
+<p>Type: <code class="highlighter-rouge">number</code><br />
+Default: <code class="highlighter-rouge">null</code></p>
+
+<p>The dragged element position y corresponding to current cursor.</p>
+
+<hr />
+
+<h4 id="handle">handle</h4>
+
+<p>Type: <code class="highlighter-rouge">selector</code><br />
+Default: <code class="highlighter-rouge">null</code></p>
+
+<p>The handle that start the draggable.</p>
+
+<hr />
+
+<h4 id="disabled">disabled</h4>
+
+<p>Type: <code class="highlighter-rouge">boolean</code><br />
+Default: <code class="highlighter-rouge">false</code></p>
+
+<p>True to stop draggable.</p>
+
+<hr />
+
+<h4 id="axis">axis</h4>
+
+<p>Type: <code class="highlighter-rouge">string</code><br />
+Default: <code class="highlighter-rouge">null</code></p>
+
+<p>Defines the axis which the dragged elements moves on, available value is ‘v’ or ‘h’, when set to null will move across ‘v’ and ‘h’ direction.</p>
+
+<hr />
+
+<h3 id="events">events</h3>
+
+<h4 id="onbeforedrag">onBeforeDrag</h4>
+
+<p>Parameters: <code class="highlighter-rouge">event</code></p>
+
+<p>Fires when the target object start dragging.</p>
+
+<hr />
+
+<h4 id="onstartdrag">onStartDrag</h4>
+
+<p>Parameters: <code class="highlighter-rouge">event,target</code></p>
+
+<p>Fires when the target object start dragging.</p>
+
+<hr />
+
+<h4 id="ondrag">onDrag</h4>
+
+<p>Parameters: <code class="highlighter-rouge">event,target</code></p>
+
+<p>Fires during dragging. Return false will not do dragging actually.</p>
+
+<hr />
+
+<h4 id="onstopdrag">onStopDrag</h4>
+
+<p>Parameters: <code class="highlighter-rouge">event,target</code></p>
+
+<p>Fires when the dragging stops.</p>
+
+		</div>
+	</div>
+</div>
+
+
+<div class="app-footer">
+	<p>HQY</p>
+	<p><a href="mailto:hqy321@gmail.com">hqy321@gmail.com</a></p>
+</div>
+
+</body>
+</html>
