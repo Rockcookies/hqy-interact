@@ -1,0 +1,7 @@
+{
+	"name": "Hqy-Interact",
+	"version": "1.0.1",
+	"dependencies": {
+		"bootstrap": "3.3.6"
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"name" : "Hqy-Interact",
+	"description": "Touch enabled jQuery plugin that lets you create powerful swiper.",
+	"version" : "1.0.1",
+	"author": {
+		"name": "HQY",
+		"email": "hqy321@gmail.com",
+		"url": "http://hqyrocks.com"
+	},
+	"license": "MIT",
+	"dependencies": {
+		"jquery": ">=1.8.3"
+	},
+	"devDependencies": {
+		"gulp": "~3.9.x",
+		"gulp-load-plugins": "~1.2.x",
+		"gulp-util": "~3.0.x",
+		"gulp-sequence": "~0.4.x",
+		"del": "~2.0.x",
+		"require-dir": "~0.3.x",
+		"gulp-rename": "~1.2.x",
+
+		"browser-sync": "~2.9.x",
+		"through2": "~2.0.x",
+
+		"gulp-sourcemaps": "~1.6.x",
+		"gulp-extname": "~0.2.2",
+		"gulp-less": "~3.0.x",
+		"gulp-header": "~1.7.x",
+		"gulp-minify-css": "~1.2.x",
+		"gulp-autoprefixer": "~3.1.x",
+        "less-plugin-est": "~2.0.x",
+
+       	"glob": "~7.0.x",
+
+       	"webpack": "~1.12.x",
+		"webpack-stream": "~3.1.x",
+		"exports-loader": "~0.6.x",
+		"imports-loader": "~0.6.x",
+		"text-loader": "~0.0.1"
+	}
+}

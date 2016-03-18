@@ -1,0 +1,145 @@
+.home-hero{
+	padding:80px 0 ;
+	text-align: center;
+	color: #fff;
+	overflow: hidden;
+	background:
+		radial-gradient(rgba(0,0,0,.08) 15%, transparent 16%) 0 0,
+		radial-gradient(rgba(0,0,0,.08) 15%, transparent 16%) 9px 9px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+		radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 9px 10px;
+	background-color:#358dd9;
+	background-size:18px 18px;
+	box-shadow:inset 0 0 10px #2667a0;
+	font-weight: 100;
+
+	h1{
+		font-size: 96px;
+		font-weight: 100;
+
+		.fc{
+			display: inline-block;
+			vertical-align: -10px;
+			margin: 0 15px 0 0;
+			width: 90px;
+			height: 90px;
+		}
+
+		sup{
+			font-size: 32px;
+			line-height: 1em;
+			vertical-align: text-top;
+			background-color: rgba(255,255,255,.66);
+			color: #358dd9;
+			border-radius: 10px;
+			padding: 8px 12px 6px;
+		}
+	}
+
+	.slogan{
+		font-size: 36px;
+		padding: 30px 0 0;
+		font-family: "HelveticaNeue-Thin", "Helvetica","Arial","Verdana","sans-serif";
+	}
+
+	.try{
+		padding: 50px 0 30px;
+
+		.button{
+			display: inline-block;
+			padding: 12px 0 10px;
+			margin: 5px;
+			text-decoration: none;
+			font-size: 22px;
+			text-align: center;
+			color: #fff;
+			width: 200px;
+			background-color: rgba(53, 140, 215,.9);
+			border-radius: 10px;
+			transition: all 300ms ease;
+			border: 1px solid #fff;
+
+			&:hover{
+				background: #fff;
+				color: @theme-color;
+			}
+		}
+	}
+
+	.more{
+		a{
+			padding: 3px 0px;
+			color: rgba(255,255,255,.66);
+			text-decoration: none;
+			border-bottom: 1px solid rgba(255,255,255,.33);
+			font-size: 18px;
+
+			&:hover{
+				color: #fff;
+				border-bottom: 1px solid rgba(255,255,255,.66);
+			}
+		}
+	}
+}
+
+.home-demo{
+	text-align: center;
+	padding: 2rem 0;
+
+	h2{
+		text-align: center;
+		color: #808080;
+		margin: 2rem;
+	}
+
+	.home-dnd{
+		display: table;
+		width: 100%;
+
+		.list{
+			display: table-cell;
+			width: 50%;
+			background-color: #49a430;
+
+			&:nth-child(odd) {
+				background-color: #4390EE;
+			}
+		}
+	}
+}
+
+.home-dnd-item{
+	color: #fff;
+	font-weight: 300;
+	margin: 10px;
+	padding: 20px 10px;
+	background-color: rgba(0, 0, 0, 0.2);
+	transition: opacity 0.4s ease-in-out;
+	font-size: 18px;
+
+	a{
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	&.op2{
+		opacity: 0.2;
+	}
+}
+
+.home-features{
+	color: #808080;
+	padding-top: 4rem;
+
+	.container{
+		max-width: 720px;
+	}
+
+	.img{
+		text-align: center;
+	}
+
+	.feature{
+		margin: 2rem 0 6rem;
+	}
+}

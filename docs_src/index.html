@@ -1,0 +1,110 @@
+---
+layout: index
+---
+
+<div class="home-hero">
+	<h1><span class="fc"></span>HqyInteract<sup>1.0</sup></h1>
+	<p class="slogan">Touch enabled jQuery plugin that lets you create powerful interactions.</p>
+	<p class="try">
+		<a class="button" href="https://github.com/Rockcookies/hqy-interact/archive/master.zip">Download</a>
+		<a class="button" href="https://github.com/Rockcookies/hqy-interact">Github</a>
+	</p>
+
+	<p class="more">
+		<a href="/docs/started-welcome.html">Read the Documentation</a><!--
+		--> &nbsp;&nbsp; <a href="/demos.html">Try the Demo</a><!--
+		--> &nbsp;&nbsp; <a href="#">Buy me a beer</a>
+	</p>
+</div>
+
+<div class="home-demo">
+	<div class="container">
+		<h2>Demo</h2>
+
+		<div class="home-dnd">
+			<div class="list">
+				<div class="home-dnd-item">You can move these elements between these two containers</div>
+				<div class="home-dnd-item">Moving them anywhere else isn't quite possible</div>
+				<div class="home-dnd-item">There's also the possibility of moving elements around in the same container, changing their position</div>
+			</div>
+			<div class="list">
+				<div class="home-dnd-item">Make sure to check out the <a href="docs.html">documentation</a></div>
+				<div class="home-dnd-item">This is the default use case. You only need to specify the containers you want to use</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="home-features">
+	<div class="container">
+		<div class="row feature">
+			<div class="col-xs-12 col-md-4 img"><img src="assets/images/feature-options.png"/></div>
+			<div class="col-xs-12 col-md-8">
+				<h2>Fully Customisable</h2>
+				<p>tons of options. Easy for novice users and even more powerful for advanced developers.</p>
+			</div>
+		</div>
+
+		<div class="row feature">
+			<div class="col-xs-12 col-md-4 img"><img src="assets/images/feature-drag.png"/></div>
+			<div class="col-xs-12 col-md-8">
+				<h2>Touch and Drag Support</h2>
+				<p>Designed specially to boost mobile browsing experience. Mouse drag works great on desktop too!</p>
+			</div>
+		</div>
+
+		<div class="row feature">
+			<div class="col-xs-12 col-md-4 img"><img src="assets/images/feature-zombie.png"/></div>
+			<div class="col-xs-12 col-md-8">
+				<h2>Zombie Browsers</h2>
+				<p>Cross-browser support, even older browsers IE6+.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var $ph, axisY;
+
+$('.home-dnd-item').hqyDraggable({
+	proxy: 'clone',
+	onStartDrag: function (event, dragElement) {
+		$(dragElement).width($(event.data.target).width());
+
+		$ph = $(this).clone();
+		$ph.addClass('op2');
+		$(this).hide().before($ph);
+	},
+	onStopDrag: function () {
+		$ph.after(this);
+		$ph.remove();
+		$ph = null;
+		$(this).show();
+	}
+});
+
+$('.home-dnd-item').hqyDroppable({
+	onDragEnter: function () {
+		axisY = 0;
+	},
+	onDragOver: function (event, dragElement) {
+		if (event.data.top > axisY) {
+			$(this).after($ph);
+		} else {
+			$(this).before($ph);
+		}
+
+		axisY = event.data.top;
+	}
+});
+
+$('.home-dnd .list').hqyDroppable({
+	onDragEnter: function (event, dragElement) {
+		if ($(this).find('.home-dnd-item').length <= 0) {
+			$(this).append($ph);
+		}
+	}
+});
+</script>
+
+

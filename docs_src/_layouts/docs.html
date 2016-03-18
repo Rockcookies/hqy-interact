@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% include meta.html %}
+</head>
+<body>
+
+{% include nav.html %}
+
+<div class="app-title">
+	<div class="container">
+		<div class="row">
+			<h1>{{ page.cate | escape }}</h1>
+		</div>
+	</div>
+</div>
+
+<div class="container app-docs">
+	<div class="row">
+		<div class="col-md-3">
+			<ul class="sidenav">
+				<li class="side-nav-head">Getting Started</li>
+				<li {% if page.title == "Welcome" %}class="active"{% endif %}><a href="started-welcome.html">Welcome</a></li>
+				<li {% if page.title == "Installation" %}class="active"{% endif %}><a href="started-installation.html">Installation</a></li>
+			</ul>
+
+			<ul class="sidenav">
+				<li class="side-nav-head">API</li>
+				<li {% if page.title == "Draggable" %}class="active"{% endif %}><a href="api-draggable.html">Draggable</a></li>
+				<li {% if page.title == "Droppable" %}class="active"{% endif %}><a href="api-droppable.html">Droppable</a></li>
+				<li {% if page.title == "Resizable" %}class="active"{% endif %}><a href="api-resizable.html">Resizable</a></li>
+			</ul>
+
+			<ul class="sidenav">
+				<li class="side-nav-head">Support</li>
+				<li {% if page.title == "Contributing" %}class="active"{% endif %}><a href="support-contributing.html">Contributing</a></li>
+				<!--<li><a href="support-changelog.html">Changelog</a></li> -->
+				<li {% if page.title == "Contact" %}class="active"{% endif %}><a href="support-contact.html">Contact</a></li>
+			</ul>
+		</div>
+		<div class="col-md-9 docs">
+			<h2>{{ page.title | escape }}</h2>
+			{{ content }}
+		</div>
+	</div>
+</div>
+
+
+{% include footer.html %}
+</body>
+</html>

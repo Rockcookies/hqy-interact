@@ -1,0 +1,62 @@
+@import "doc/bootstrap.less";
+@import "doc/syntax.less";
+
+@theme-color: #358dd9;
+
+@font-size-base: 16px;
+@font-family-base: "Helvetica neue",Helvetica,Tahoma,"PingFang SC","lantinghei sc","Microsoft Yahei", sans-serif;
+
+@navbar-default-bg: #fff;
+@navbar-default-link-color: #aaa;
+@text-color: #555;
+@navbar-default-link-hover-color: @theme-color;
+@navbar-default-link-active-color: @theme-color;
+
+h3{
+	margin: 5rem 0 2rem 0;
+}
+
+pre{
+	border: none;
+	border-radius: none;
+	padding: 2.6rem;
+}
+
+.app-nav{
+	border-radius: 0;
+	border: none;
+	margin-bottom: 0;
+
+	.navbar-nav > li > a {
+		transition: color 600ms ease;
+	}
+}
+
+.app-title{
+	background: #4390EE;
+	margin-bottom: 2rem;
+
+	h1{
+		margin: 0;
+		padding: 3rem 0;
+		font-weight: 300;
+		color: #fff;
+		font-size: 5rem;
+	}
+}
+
+.app-footer{
+	margin-top: 5rem;
+    background: #f7f7f7;
+	padding: 30px;
+	font-size: 14px;
+	text-align: center;
+
+	p{
+		margin: 0;
+	}
+}
+
+@import "doc/index.less";
+@import "doc/demos.less";
+@import "doc/docs.less";
