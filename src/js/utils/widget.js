@@ -182,7 +182,7 @@ module.exports = {
 
 
 	destroy: function () {
-		this.undelegateEvents();
+		this.unDelegateEvents();
 
 		for (var p in this) {
 			if (this.hasOwnProperty(p)) {
